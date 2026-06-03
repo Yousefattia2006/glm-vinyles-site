@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SplashScreen from "@/components/SplashScreen";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -17,9 +18,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Nova Studio — Handcrafted Vinyl Stickers",
+  title: "GLM Vinyles — Decorative Wall Panels & Surfaces",
   description:
-    "Premium decorative vinyl stickers designed to transform your space. Handcrafted with care by Nova Studio.",
+    "Premium decorative wall panels, vinyl surfaces, and architectural profiles. Transform any space with GLM Vinyles.",
 };
 
 export default function RootLayout({
@@ -33,8 +34,10 @@ export default function RootLayout({
       className={`${playfair.variable} ${inter.variable} scroll-smooth`}
     >
       <body className="min-h-screen flex flex-col font-[family-name:var(--font-inter)] antialiased">
+        <SplashScreen />
         <Navbar />
-        <main className="flex-1">{children}</main>
+        {/* pt-20 offsets the fixed navbar height so content doesn't hide behind it */}
+        <main className="flex-1 pt-20">{children}</main>
         <Footer />
       </body>
     </html>

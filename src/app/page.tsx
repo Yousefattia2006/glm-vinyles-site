@@ -1,23 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
+import StickerApplyAnimation from "@/components/StickerApplyAnimation";
 
 const featuredImages = [
-  { seed: "nova-work1", label: "Wall Mural" },
-  { seed: "nova-work2", label: "Custom Decal" },
-  { seed: "nova-work3", label: "Laptop Art" },
+  { src: "/images/featured-1.jpg", label: "Living Room Wall Wrap", position: "object-center" },
+  { src: "/images/featured-2.jpg", label: "Kitchen Cabinet Wrap", position: "object-center" },
+  { src: "/images/featured-3.jpg", label: "Marble Bathroom Wrap", position: "object-center" },
 ];
 
 const testimonials = [
   {
     quote:
-      "Nova completely transformed my home office. The wall decal Sara designed for me is absolutely stunning — I get compliments every single day.",
-    name: "Layla M.",
+      "What impressed me most was how premium it looks once installed. Visitors assume it's real stone, and they're always surprised when I tell them how affordable it was compared to traditional materials.",
   },
   {
     quote:
-      "I ordered custom name stickers for my daughter's nursery and I cried when I saw them. So beautiful, so personal. This is art.",
-    name: "Rania K.",
+      "I was initially considering natural marble, but after comparing the costs and seeing the final result, I honestly couldn't justify spending several times more. The finish looks incredible and exceeded my expectations.",
   },
 ];
 
@@ -25,29 +24,27 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[calc(100svh-5rem)] flex items-center justify-center overflow-hidden">
         <Image
-          src="https://picsum.photos/seed/nova-hero/1600/900"
-          alt="Nova hero background"
+          src="/images/hero.jpg"
+          alt="Nova Studio — premium vinyl sample collection"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/55" />
-        <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
-          <p className="text-[#c4b5fd] text-sm font-medium tracking-[0.2em] uppercase mb-4">
-            Nova Studio
-          </p>
-          <h1 className="font-[family-name:var(--font-playfair)] text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
+        {/* Gradient overlay — darker at bottom for text contrast on mobile */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/70" />
+        <div className="relative z-10 text-center px-5 max-w-2xl mx-auto">
+          <h1 className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-4 md:mb-6">
             Peel. Stick. Transform.
           </h1>
-          <p className="text-white/80 text-lg md:text-xl mb-10 leading-relaxed">
+          <p className="text-white/80 text-base md:text-xl mb-8 md:mb-10 leading-relaxed max-w-lg mx-auto">
             Handcrafted vinyl stickers designed to make your space feel like yours.
           </p>
           <Link
             href="/work"
-            className="inline-block bg-[#6C3FC5] text-white px-8 py-4 rounded-full font-semibold text-base hover:scale-105 hover:bg-[#5a33a8] transition-all duration-300 shadow-lg"
+            className="inline-block bg-[#6C3FC5] text-white px-7 py-3.5 md:px-8 md:py-4 rounded-full font-semibold text-sm md:text-base hover:scale-105 hover:bg-[#5a33a8] transition-all duration-300 shadow-lg active:scale-95"
           >
             See Our Work
           </Link>
@@ -55,26 +52,28 @@ export default function Home() {
       </section>
 
       {/* Featured Work */}
-      <section className="py-24 px-6 bg-[#F9F7F4]">
+      <section className="py-16 md:py-24 px-4 md:px-6 bg-[#F9F7F4]">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection>
-            <h2 className="font-[family-name:var(--font-playfair)] text-4xl font-bold text-gray-900 text-center mb-14">
+            <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl font-bold text-gray-900 text-center mb-10 md:mb-14">
               Featured Work
             </h2>
           </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredImages.map(({ seed, label }, i) => (
-              <AnimatedSection key={seed} delay={i * 120}>
-                <div className="group relative aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300">
+          {/* Horizontal scroll on mobile, grid on desktop */}
+          <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory md:grid md:grid-cols-3 md:overflow-visible md:pb-0 scrollbar-hide">
+            {featuredImages.map(({ src, label, position }, i) => (
+              <AnimatedSection key={label} delay={i * 120}>
+                <div className="group relative flex-shrink-0 w-[78vw] sm:w-[60vw] md:w-auto aspect-square overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 snap-center">
                   <Image
-                    src={`https://picsum.photos/seed/${seed}/600/600`}
+                    src={src}
                     alt={label}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className={`object-cover ${position} group-hover:scale-105 transition-transform duration-500`}
+                    sizes="(max-width: 640px) 78vw, (max-width: 768px) 60vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-end p-5">
-                    <span className="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm tracking-wide">
+                  {/* Label always visible on mobile, hover-only on desktop */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent md:bg-black/0 md:group-hover:bg-black/30 transition-colors duration-300 flex items-end p-4 md:p-5">
+                    <span className="text-white font-medium text-sm tracking-wide md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                       {label}
                     </span>
                   </div>
@@ -85,11 +84,14 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Scroll-driven sticker application animation */}
+      <StickerApplyAnimation />
+
       {/* Personal Touch Banner */}
       <AnimatedSection>
-        <section className="py-20 px-6 bg-[#F0EEF9]">
+        <section className="py-14 md:py-20 px-5 md:px-6 bg-[#F0EEF9]">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl text-[#6C3FC5] italic leading-relaxed">
+            <p className="font-[family-name:var(--font-playfair)] text-xl md:text-3xl text-[#6C3FC5] italic leading-relaxed">
               &ldquo;Every order is handled personally — no automated systems,
               just care.&rdquo;
             </p>
@@ -98,17 +100,17 @@ export default function Home() {
       </AnimatedSection>
 
       {/* Testimonials */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-16 md:py-24 px-4 md:px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <AnimatedSection>
-            <h2 className="font-[family-name:var(--font-playfair)] text-4xl font-bold text-gray-900 text-center mb-14">
+            <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl font-bold text-gray-900 text-center mb-10 md:mb-14">
               What People Say
             </h2>
           </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map(({ quote, name }, i) => (
-              <AnimatedSection key={name} delay={i * 150}>
-                <div className="bg-[#F9F7F4] rounded-2xl p-8 flex flex-col gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
+            {testimonials.map(({ quote }, i) => (
+              <AnimatedSection key={i} delay={i * 150}>
+                <div className="bg-[#F9F7F4] rounded-2xl p-6 md:p-8 flex flex-col gap-4 md:gap-5">
                   <svg
                     width="36"
                     height="28"
@@ -123,7 +125,46 @@ export default function Home() {
                     />
                   </svg>
                   <p className="text-gray-700 leading-relaxed text-base">{quote}</p>
-                  <p className="font-semibold text-[#6C3FC5] text-sm">— {name}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Main Features */}
+      <section className="py-16 md:py-24 px-5 md:px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <AnimatedSection>
+            <div className="flex items-center gap-6 mb-12">
+              <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl font-bold text-gray-900 whitespace-nowrap">
+                Main Features
+              </h2>
+              <div className="flex-1 h-px bg-gray-200" />
+            </div>
+          </AnimatedSection>
+
+          <div className="columns-1 sm:columns-2 gap-x-16">
+            {[
+              "Waterproof",
+              "Flame Retardant",
+              "Scratch Resistant",
+              "Stain Resistant",
+              "Bendable & Flexible",
+              "Eco-Friendly",
+              "Moisture Resistant",
+              "Impact Resistant",
+              "Deformation Resistant",
+              "Lightweight",
+              "Easy Installation",
+              "Large Seamless Panels",
+            ].map((feature, i) => (
+              <AnimatedSection key={feature} delay={i * 40}>
+                <div className="flex items-center gap-4 py-4 border-b border-gray-100 break-inside-avoid">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#6C3FC5] flex-shrink-0" />
+                  <span className="text-gray-800 text-base md:text-lg font-medium">
+                    {feature}
+                  </span>
                 </div>
               </AnimatedSection>
             ))}
@@ -133,13 +174,13 @@ export default function Home() {
 
       {/* CTA */}
       <AnimatedSection>
-        <section className="py-24 px-6 bg-[#F9F7F4] text-center">
-          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <section className="py-16 md:py-24 px-5 md:px-6 bg-[#F9F7F4] text-center">
+          <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-5xl font-bold text-gray-900 mb-6">
             Ready to transform your space?
           </h2>
           <Link
             href="/contact"
-            className="inline-block bg-[#6C3FC5] text-white px-9 py-4 rounded-full font-semibold text-base hover:scale-105 hover:bg-[#5a33a8] transition-all duration-300 shadow-md"
+            className="inline-block bg-[#6C3FC5] text-white px-8 py-3.5 md:px-9 md:py-4 rounded-full font-semibold text-sm md:text-base hover:scale-105 hover:bg-[#5a33a8] transition-all duration-300 shadow-md active:scale-95"
           >
             Get in Touch
           </Link>

@@ -1,24 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 
-function InstagramIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
 
 function WhatsAppIcon() {
   return (
@@ -57,22 +39,17 @@ export default function Footer() {
   return (
     <footer className="bg-[#1a1a1a] text-white py-12">
       <div className="max-w-6xl mx-auto px-6 flex flex-col items-center gap-6">
-        <span className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-[#a78bfa]">
-          Nova
-        </span>
+        {/* Logo SVG — inverted to white for dark footer */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/logo.svg"
+          alt="GLM Vinyles"
+          className="h-16 w-auto invert"
+        />
 
         <div className="flex items-center gap-6">
           <Link
-            href="https://instagram.com/nova.studio"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-[#a78bfa] transition-colors"
-            aria-label="Instagram"
-          >
-            <InstagramIcon />
-          </Link>
-          <Link
-            href="https://wa.me/15550000000"
+            href="https://wa.me/201093363030"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-[#a78bfa] transition-colors"
@@ -81,9 +58,7 @@ export default function Footer() {
             <WhatsAppIcon />
           </Link>
           <Link
-            href="mailto:hello@novastudio.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:contact@glm-vinyles.com"
             className="text-gray-400 hover:text-[#a78bfa] transition-colors"
             aria-label="Email"
           >
@@ -91,7 +66,7 @@ export default function Footer() {
           </Link>
         </div>
 
-        <p className="text-gray-500 text-sm">© 2025 Nova. All rights reserved.</p>
+        <p className="text-gray-500 text-sm">© 2025 GLM Vinyles. All rights reserved.</p>
       </div>
     </footer>
   );
