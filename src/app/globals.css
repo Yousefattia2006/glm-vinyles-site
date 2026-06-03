@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-nova: #6C3FC5;
+  --color-nova-light: #F0EEF9;
+  --color-off-white: #F9F7F4;
+  --font-display: var(--font-playfair);
+  --font-body: var(--font-inter);
+}
+
+:root {
+  --font-playfair: 'Playfair Display', serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+  background: #ffffff;
+  color: #171717;
+}
