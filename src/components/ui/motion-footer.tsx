@@ -269,7 +269,7 @@ export function CinematicFooter() {
           {/* Giant background text — always visible, sits above grid but below content */}
           <div
             ref={giantTextRef}
-            className="footer-giant-bg-text absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap z-[1] pointer-events-none select-none"
+            className="footer-giant-bg-text absolute -bottom-[10vh] left-1/2 -translate-x-1/2 whitespace-nowrap z-[1] pointer-events-none select-none"
           >
             GLM
           </div>

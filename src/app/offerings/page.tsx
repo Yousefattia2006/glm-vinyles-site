@@ -6,6 +6,18 @@ export default function OfferingsPage() {
   return (
     <div className="bg-black min-h-screen">
 
+      {/* ── Title — appears BEFORE the images ── */}
+      <section className="bg-black py-16 md:py-24 px-6 text-center">
+        <AnimatedSection>
+          <h1 className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-4">
+            Multiple Surface Finishes
+          </h1>
+          <p className="text-white/50 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+            Scroll to explore our surface collections.
+          </p>
+        </AnimatedSection>
+      </section>
+
       {/* ── Story Scroll Gallery ── */}
       <FlowArt aria-label="Surface finishes gallery">
 
@@ -18,62 +30,57 @@ export default function OfferingsPage() {
               className="w-full h-full object-cover object-center"
               style={{ minHeight: "100vh" }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
           </div>
-          <h2 className="relative z-10 font-[family-name:var(--font-playfair)] text-white text-4xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-tight drop-shadow-lg px-[4vw] pt-[clamp(1rem,4vw,3rem)]">
-            Concrete Design
-          </h2>
+          {/* Label at the bottom */}
+          <div className="absolute bottom-10 md:bottom-14 left-0 right-0 px-[4vw] z-10">
+            <h2 className="font-[family-name:var(--font-playfair)] text-white text-4xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-tight drop-shadow-lg">
+              Concrete Design
+            </h2>
+          </div>
         </FlowSection>
 
         <FlowSection aria-label="Wood Design">
           <div className="absolute inset-0 w-full h-full">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/try2.jpg"
+              src="/images/image2.jpg"
               alt="Wood Design"
               className="w-full h-full object-cover object-center"
               style={{ minHeight: "100vh" }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
           </div>
-          <h2 className="relative z-10 font-[family-name:var(--font-playfair)] text-white text-4xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-tight drop-shadow-lg px-[4vw] pt-[clamp(1rem,4vw,3rem)]">
-            Wood Design
-          </h2>
+          <div className="absolute bottom-10 md:bottom-14 left-0 right-0 px-[4vw] z-10">
+            <h2 className="font-[family-name:var(--font-playfair)] text-white text-4xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-tight drop-shadow-lg">
+              Wood Design
+            </h2>
+          </div>
         </FlowSection>
 
         <FlowSection aria-label="Marble Design">
           <div className="absolute inset-0 w-full h-full">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/try3.jpg"
+              src="/images/image3.jpg"
               alt="Marble Design"
               className="w-full h-full object-cover object-center"
               style={{ minHeight: "100vh" }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
           </div>
-          <h2 className="relative z-10 font-[family-name:var(--font-playfair)] text-white text-4xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-tight drop-shadow-lg px-[4vw] pt-[clamp(1rem,4vw,3rem)]">
-            Marble Design
-          </h2>
+          <div className="absolute bottom-10 md:bottom-14 left-0 right-0 px-[4vw] z-10">
+            <h2 className="font-[family-name:var(--font-playfair)] text-white text-4xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-tight drop-shadow-lg">
+              Marble Design
+            </h2>
+          </div>
         </FlowSection>
 
       </FlowArt>
 
-      {/* ── Section title ── */}
-      <section className="py-12 md:py-16 px-5 bg-white text-center">
-        <AnimatedSection>
-          <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-5xl font-bold text-gray-900 mb-3">
-            Multiple Surface Finishes
-          </h2>
-          <p className="text-gray-500 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-            Every finish crafted to perfection — from concrete and wood to marble and beyond.
-          </p>
-        </AnimatedSection>
-      </section>
-
       {/* ── CTA ── */}
       <AnimatedSection>
-        <section className="bg-white py-10 md:py-16 px-5 text-center border-t border-gray-100">
+        <section className="bg-white py-14 md:py-20 px-5 text-center">
           <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Like what you see? Let&apos;s talk.
           </h2>
