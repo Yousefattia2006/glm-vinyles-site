@@ -7,13 +7,20 @@ export default function SplashScreen() {
   const [hiding, setHiding] = useState(false);
 
   useEffect(() => {
-    // Start fade-out after 1.8s
-    const fadeTimer = setTimeout(() => setHiding(true), 1800);
-    // Remove from DOM after fade completes
-    const removeTimer = setTimeout(() => setVisible(false), 2400);
+    // Lock scroll while splash is showing
+    document.body.style.overflow = "hidden";
+
+    const fadeTimer  = setTimeout(() => setHiding(true), 1800);
+    const removeTimer = setTimeout(() => {
+      setVisible(false);
+      // Unlock scroll once splash is gone
+      document.body.style.overflow = "";
+    }, 2400);
+
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(removeTimer);
+      document.body.style.overflow = "";
     };
   }, []);
 
@@ -38,9 +45,7 @@ export default function SplashScreen() {
       <div className="w-40 h-0.5 bg-gray-100 rounded-full overflow-hidden">
         <div
           className="h-full bg-[#6C3FC5] rounded-full"
-          style={{
-            animation: "splash-bar 1.6s ease-in-out forwards",
-          }}
+          style={{ animation: "splash-bar 1.6s ease-in-out forwards" }}
         />
       </div>
 
