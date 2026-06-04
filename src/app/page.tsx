@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[calc(100svh-5rem)] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[calc(100svh-5rem)] flex flex-col overflow-hidden">
         <Image
           src="/images/hero.jpg"
           alt="Nova Studio — premium vinyl sample collection"
@@ -33,15 +33,21 @@ export default function Home() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        {/* Gradient overlay — darker at bottom for text contrast on mobile */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/70" />
-        <div className="relative z-10 text-center px-5 max-w-2xl mx-auto">
-          <h1 className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-4 md:mb-6">
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60" />
+
+        {/* Title pinned to the top */}
+        <div className="relative z-10 px-5 pt-3 md:pt-4 text-center">
+          <h1 className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight">
             Peel. Stick. Transform.
           </h1>
-          <p className="text-white/80 text-base md:text-xl mb-8 md:mb-10 leading-relaxed max-w-lg mx-auto">
-            Handcrafted vinyl stickers designed to make your space feel like yours.
-          </p>
+        </div>
+
+        {/* Spacer so image fills the middle */}
+        <div className="flex-1" />
+
+        {/* "See Our Work" button pinned to the bottom */}
+        <div className="relative z-10 px-5 pb-12 md:pb-16 text-center">
           <Link
             href="/work"
             className="inline-block bg-[#6C3FC5] text-white px-7 py-3.5 md:px-8 md:py-4 rounded-full font-semibold text-sm md:text-base hover:scale-105 hover:bg-[#5a33a8] transition-all duration-300 shadow-lg active:scale-95"

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { CinematicFooter } from "@/components/ui/motion-footer";
 import SplashScreen from "@/components/SplashScreen";
 
 const playfair = Playfair_Display({
@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   title: "GLM Vinyles — Decorative Wall Panels & Surfaces",
   description:
     "Premium decorative wall panels, vinyl surfaces, and architectural profiles. Transform any space with GLM Vinyles.",
+  icons: {
+    icon: "/images/favicon-white.svg",
+    shortcut: "/images/favicon-white.svg",
+    apple: "/images/favicon-white.svg",
+  },
 };
 
 export default function RootLayout({
@@ -38,7 +43,7 @@ export default function RootLayout({
         <Navbar />
         {/* pt-20 offsets the fixed navbar height so content doesn't hide behind it */}
         <main className="flex-1 pt-20">{children}</main>
-        <Footer />
+        <CinematicFooter />
       </body>
     </html>
   );
