@@ -78,21 +78,32 @@ const FlowArt: React.FC<FlowArtProps> = ({
       const triggers: ScrollTrigger[] = [];
 
       sections.forEach((section, i) => {
-        gsap.set(section, { zIndex: i + 1 });
+        // Force GPU layer on every section up front
+        gsap.set(section, {
+          zIndex: i + 1,
+          force3D: true,
+          willChange: 'transform',
+        });
 
         const inner = section.querySelector<HTMLElement>('.flow-art-container');
         if (!inner) return;
 
+        // Pre-promote inner container to GPU
+        gsap.set(inner, { force3D: true, willChange: 'transform' });
+
         if (i > 0) {
-          gsap.set(inner, { rotation: 30, transformOrigin: 'bottom left' });
+          // Smaller rotation angle = less work for compositor = less lag
+          gsap.set(inner, { rotation: 15, transformOrigin: 'bottom left' });
           const tween = gsap.to(inner, {
             rotation: 0,
             ease: 'none',
+            force3D: true,
             scrollTrigger: {
               trigger: section,
               start: 'top bottom',
-              end: 'top 25%',
-              scrub: true,
+              end: 'top 30%',
+              scrub: 0.5,   // lower = more responsive, less lag
+              fastScrollEnd: true,
             },
           });
           if (tween.scrollTrigger) triggers.push(tween.scrollTrigger);
@@ -106,6 +117,7 @@ const FlowArt: React.FC<FlowArtProps> = ({
               end: 'bottom top',
               pin: true,
               pinSpacing: false,
+              anticipatePin: 1,   // pre-calculates pin — removes stutter on entry
             }),
           );
         }
