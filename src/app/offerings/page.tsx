@@ -26,7 +26,7 @@ export default function OfferingsPage() {
           <div className="absolute inset-0 w-full h-full">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/surfaces-1.jpg"
+              src="/images/try1.jpg"
               alt="Surface finish 1"
               className="w-full h-full object-cover object-center"
               style={{ minHeight: "100vh" }}

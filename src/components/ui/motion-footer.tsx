@@ -266,50 +266,50 @@ export function CinematicFooter() {
           {/* Grid background */}
           <div className="footer-bg-grid absolute inset-0 z-0 pointer-events-none" />
 
-          {/* Giant background text */}
+          {/* Giant background text — always visible, sits above grid but below content */}
           <div
             ref={giantTextRef}
-            className="footer-giant-bg-text absolute -bottom-[10vh] left-1/2 -translate-x-1/2 whitespace-nowrap z-0 pointer-events-none select-none"
+            className="footer-giant-bg-text absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap z-[1] pointer-events-none select-none"
           >
             GLM
           </div>
 
           {/* Scrolling marquee */}
-          <div className="absolute top-12 left-0 w-full overflow-hidden border-y border-white/10 bg-white/5 backdrop-blur-md py-4 z-10 -rotate-2 scale-110 shadow-2xl">
-            <div className="flex w-max animate-footer-scroll-marquee text-xs md:text-sm font-semibold tracking-[0.25em] uppercase">
+          <div className="absolute top-10 md:top-12 left-0 w-full overflow-hidden border-y border-white/10 bg-white/5 backdrop-blur-md py-3 md:py-4 z-10 -rotate-2 scale-110 shadow-2xl">
+            <div className="flex w-max animate-footer-scroll-marquee text-[10px] md:text-sm font-semibold tracking-[0.2em] uppercase">
               <MarqueeItem /><MarqueeItem />
             </div>
           </div>
 
           {/* Main centre content */}
-          <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 mt-20 w-full max-w-5xl mx-auto">
+          <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 md:px-6 mt-16 md:mt-20 w-full max-w-5xl mx-auto">
             <h2
               ref={headingRef}
-              className="footer-text-glow font-[family-name:var(--font-playfair)] text-5xl md:text-8xl font-black tracking-tight mb-12 text-center leading-none"
+              className="footer-text-glow font-[family-name:var(--font-playfair)] text-3xl sm:text-5xl md:text-8xl font-black tracking-tight mb-6 md:mb-12 text-center leading-none"
             >
               Transform your space.
             </h2>
 
-            <div ref={linksRef} className="flex flex-col items-center gap-6 w-full">
+            <div ref={linksRef} className="flex flex-col items-center gap-4 md:gap-6 w-full">
               {/* Primary nav links */}
-              <div className="flex flex-wrap justify-center gap-4 w-full">
-                <MagneticButton as={Link} href="/offerings" className="footer-glass-pill px-10 py-5 rounded-full text-white font-bold text-sm md:text-base flex items-center gap-3">
+              <div className="flex flex-wrap justify-center gap-3 md:gap-4 w-full">
+                <MagneticButton as={Link} href="/offerings" className="footer-glass-pill px-6 md:px-10 py-3.5 md:py-5 rounded-full text-white font-bold text-sm md:text-base flex items-center gap-3">
                   Our Products
                 </MagneticButton>
-                <MagneticButton as={Link} href="/work" className="footer-glass-pill px-10 py-5 rounded-full text-white font-bold text-sm md:text-base flex items-center gap-3">
+                <MagneticButton as={Link} href="/work" className="footer-glass-pill px-6 md:px-10 py-3.5 md:py-5 rounded-full text-white font-bold text-sm md:text-base flex items-center gap-3">
                   Our Work
                 </MagneticButton>
               </div>
 
               {/* Secondary links */}
-              <div className="flex flex-wrap justify-center gap-3 md:gap-5 w-full mt-2">
-                <MagneticButton as={Link} href="/about" className="footer-glass-pill px-6 py-3 rounded-full text-gray-400 font-medium text-xs md:text-sm hover:text-white">
+              <div className="flex flex-wrap justify-center gap-2 md:gap-5 w-full">
+                <MagneticButton as={Link} href="/about" className="footer-glass-pill px-4 md:px-6 py-2.5 md:py-3 rounded-full text-gray-400 font-medium text-xs md:text-sm hover:text-white">
                   About Us
                 </MagneticButton>
-                <MagneticButton as="a" href="https://wa.me/201093363030" target="_blank" rel="noopener noreferrer" className="footer-glass-pill px-6 py-3 rounded-full text-gray-400 font-medium text-xs md:text-sm hover:text-white flex items-center gap-2">
+                <MagneticButton as="a" href="https://wa.me/201093363030" target="_blank" rel="noopener noreferrer" className="footer-glass-pill px-4 md:px-6 py-2.5 md:py-3 rounded-full text-gray-400 font-medium text-xs md:text-sm hover:text-white flex items-center gap-2">
                   <span className="text-[#25D366]"><WhatsAppIcon /></span> WhatsApp
                 </MagneticButton>
-                <MagneticButton as="a" href="mailto:contact@glm-vinyles.com" className="footer-glass-pill px-6 py-3 rounded-full text-gray-400 font-medium text-xs md:text-sm hover:text-white flex items-center gap-2">
+                <MagneticButton as="a" href="mailto:contact@glm-vinyles.com" className="footer-glass-pill px-4 md:px-6 py-2.5 md:py-3 rounded-full text-gray-400 font-medium text-xs md:text-sm hover:text-white flex items-center gap-2">
                   <span className="text-[#6C3FC5]"><EmailIcon /></span> Email Us
                 </MagneticButton>
               </div>
@@ -317,18 +317,18 @@ export function CinematicFooter() {
           </div>
 
           {/* Bottom bar */}
-          <div className="relative z-20 w-full pb-8 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="relative z-20 w-full pb-6 md:pb-8 px-4 md:px-12 flex flex-col items-center gap-3 md:flex-row md:justify-between md:gap-6">
 
             {/* Copyright */}
-            <div className="text-gray-500 text-[10px] md:text-xs font-semibold tracking-widest uppercase order-2 md:order-1">
+            <div className="text-gray-500 text-[9px] md:text-xs font-semibold tracking-widest uppercase order-3 md:order-1 text-center">
               © {new Date().getFullYear()} GLM Vinyles. All rights reserved.
             </div>
 
             {/* Crafted by badge */}
-            <div className="footer-glass-pill px-6 py-3 rounded-full flex items-center gap-2 order-1 md:order-2 cursor-default">
-              <span className="text-gray-400 text-[10px] md:text-xs font-bold uppercase tracking-widest">Crafted with</span>
+            <div className="footer-glass-pill px-4 md:px-6 py-2.5 md:py-3 rounded-full flex items-center gap-2 order-1 md:order-2 cursor-default">
+              <span className="text-gray-400 text-[9px] md:text-xs font-bold uppercase tracking-widest">Crafted with</span>
               <span className="animate-footer-heartbeat text-sm text-red-500">❤</span>
-              <span className="text-gray-400 text-[10px] md:text-xs font-bold uppercase tracking-widest">by</span>
+              <span className="text-gray-400 text-[9px] md:text-xs font-bold uppercase tracking-widest">by</span>
               <span className="text-white font-black text-xs md:text-sm ml-1">MY Studios</span>
             </div>
 
@@ -336,9 +336,9 @@ export function CinematicFooter() {
             <MagneticButton
               as="button"
               onClick={scrollToTop}
-              className="w-12 h-12 rounded-full footer-glass-pill flex items-center justify-center text-gray-400 hover:text-white group order-3"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full footer-glass-pill flex items-center justify-center text-gray-400 hover:text-white group order-2 md:order-3"
             >
-              <svg className="w-5 h-5 transform group-hover:-translate-y-1.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 md:w-5 md:h-5 transform group-hover:-translate-y-1.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
               </svg>
             </MagneticButton>
