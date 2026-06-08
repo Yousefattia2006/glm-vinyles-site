@@ -30,30 +30,11 @@ export default function OfferingsPage() {
               className="w-full h-full object-cover object-center"
               style={{ minHeight: "100vh" }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent" />
           </div>
-          {/* Label at the bottom */}
-          <div className="absolute bottom-10 md:bottom-14 left-0 right-0 px-[4vw] z-10">
+          <div className="absolute top-10 md:top-14 left-0 right-0 px-[4vw] z-10">
             <h2 className="font-[family-name:var(--font-playfair)] text-white text-4xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-tight drop-shadow-lg">
               Concrete Design
-            </h2>
-          </div>
-        </FlowSection>
-
-        <FlowSection aria-label="Wood Design">
-          <div className="absolute inset-0 w-full h-full">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/image2.jpg"
-              alt="Wood Design"
-              className="w-full h-full object-cover object-center"
-              style={{ minHeight: "100vh" }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-          </div>
-          <div className="absolute bottom-10 md:bottom-14 left-0 right-0 px-[4vw] z-10">
-            <h2 className="font-[family-name:var(--font-playfair)] text-white text-4xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-tight drop-shadow-lg">
-              Wood Design
             </h2>
           </div>
         </FlowSection>
@@ -62,16 +43,34 @@ export default function OfferingsPage() {
           <div className="absolute inset-0 w-full h-full">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/image3.jpg"
+              src="/images/image2.jpg"
               alt="Marble Design"
               className="w-full h-full object-cover object-center"
               style={{ minHeight: "100vh" }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent" />
           </div>
-          <div className="absolute bottom-10 md:bottom-14 left-0 right-0 px-[4vw] z-10">
+          <div className="absolute top-10 md:top-14 left-0 right-0 px-[4vw] z-10">
             <h2 className="font-[family-name:var(--font-playfair)] text-white text-4xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-tight drop-shadow-lg">
               Marble Design
+            </h2>
+          </div>
+        </FlowSection>
+
+        <FlowSection aria-label="Wood Design">
+          <div className="absolute inset-0 w-full h-full">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/image3.jpg"
+              alt="Wood Design"
+              className="w-full h-full object-cover object-center"
+              style={{ minHeight: "100vh" }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent" />
+          </div>
+          <div className="absolute top-10 md:top-14 left-0 right-0 px-[4vw] z-10">
+            <h2 className="font-[family-name:var(--font-playfair)] text-white text-4xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-tight drop-shadow-lg">
+              Wood Design
             </h2>
           </div>
         </FlowSection>
