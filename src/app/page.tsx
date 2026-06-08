@@ -52,7 +52,7 @@ export default function Home() {
 
       {/* ── Peel. Stick. Transform. banner ── */}
       <div className="relative w-full flex items-center justify-center overflow-hidden"
-        style={{ minHeight: "clamp(480px, 80vw, 900px)" }}
+        style={{ minHeight: "clamp(380px, 65vw, 900px)" }}
       >
         {/* Background image */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -62,19 +62,15 @@ export default function Home() {
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        {/* Text — left aligned, stacked */}
-        <div className="relative z-10 w-full flex items-center" style={{ padding: "clamp(2.5rem, 6vw, 6rem) clamp(2rem, 8vw, 10rem)" }}>
+        {/* Text — hard left, mobile-first */}
+        <div className="relative z-10 w-full pl-5 pr-4 sm:pl-8 md:pl-14 lg:pl-20 py-10 md:py-16">
           <h2
-            className="font-[family-name:var(--font-playfair)] font-bold text-gray-900 text-left"
-            style={{
-              fontSize: "clamp(4.5rem, 13vw, 12rem)",
-              lineHeight: "1.05",
-              letterSpacing: "-0.02em",
-            }}
+            className="font-[family-name:var(--font-playfair)] font-bold text-gray-900 text-left leading-none"
+            style={{ letterSpacing: "-0.03em" }}
           >
-            <span className="block mb-2 md:mb-4">Peel.</span>
-            <span className="block mb-2 md:mb-4">Stick.</span>
-            <span className="block">Transform.</span>
+            <span className="block text-[15vw] sm:text-[13vw] md:text-[11vw] lg:text-[10vw]" style={{ marginBottom: "0.18em" }}>Peel.</span>
+            <span className="block text-[15vw] sm:text-[13vw] md:text-[11vw] lg:text-[10vw]" style={{ marginBottom: "0.18em" }}>Stick.</span>
+            <span className="block text-[15vw] sm:text-[13vw] md:text-[11vw] lg:text-[10vw]">Transform.</span>
           </h2>
         </div>
       </div>
