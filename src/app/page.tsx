@@ -62,10 +62,15 @@ export default function Home() {
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        {/* Text */}
-        <h2 className="relative z-10 font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 tracking-tight text-center px-6 leading-tight">
-          Peel. Stick. Transform.
-        </h2>
+        {/* Text — left aligned, stacked */}
+        <div className="relative z-10 w-full px-8 md:px-16 lg:px-24">
+          <h2 className="font-[family-name:var(--font-playfair)] font-bold text-gray-900 tracking-tight leading-none text-left"
+            style={{ fontSize: "clamp(3.5rem, 10vw, 9rem)" }}>
+            <span className="block">Peel.</span>
+            <span className="block">Stick.</span>
+            <span className="block">Transform.</span>
+          </h2>
+        </div>
       </div>
 
       {/* Featured Work */}
