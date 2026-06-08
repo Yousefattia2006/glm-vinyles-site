@@ -52,7 +52,7 @@ export default function Home() {
 
       {/* ── Peel. Stick. Transform. banner ── */}
       <div className="relative w-full flex items-center justify-center overflow-hidden"
-        style={{ minHeight: "clamp(220px, 35vw, 480px)" }}
+        style={{ minHeight: "clamp(480px, 80vw, 900px)" }}
       >
         {/* Background image */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
