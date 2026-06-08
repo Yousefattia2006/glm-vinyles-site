@@ -36,14 +36,7 @@ export default function Home() {
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60" />
 
-        {/* Title pinned to the top */}
-        <div className="relative z-10 px-5 pt-3 md:pt-4 text-center">
-          <h1 className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight">
-            Peel. Stick. Transform.
-          </h1>
-        </div>
-
-        {/* Spacer so image fills the middle */}
+        {/* Spacer so full image is visible */}
         <div className="flex-1" />
 
         {/* "See Our Work" button pinned to the bottom */}
@@ -56,6 +49,45 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      {/* ── Peel. Stick. Transform. banner strip ── */}
+      <div
+        className="w-full py-5 md:py-7 flex items-center justify-center overflow-hidden"
+        style={{
+          background: `
+            repeating-linear-gradient(
+              90deg,
+              rgba(180,150,110,0.07) 0px,
+              rgba(180,150,110,0.07) 1px,
+              transparent 1px,
+              transparent 38px
+            ),
+            repeating-linear-gradient(
+              88deg,
+              rgba(160,130,90,0.05) 0px,
+              rgba(160,130,90,0.05) 1px,
+              transparent 1px,
+              transparent 60px
+            ),
+            linear-gradient(
+              180deg,
+              #faf8f5 0%,
+              #f5f0e8 40%,
+              #f8f4ee 70%,
+              #faf8f5 100%
+            )
+          `,
+          borderTop: "1px solid rgba(180,150,110,0.18)",
+          borderBottom: "1px solid rgba(180,150,110,0.18)",
+        }}
+      >
+        <h2
+          className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 tracking-tight text-center px-4"
+          style={{ letterSpacing: "0.01em" }}
+        >
+          Peel. Stick. Transform.
+        </h2>
+      </div>
 
       {/* Featured Work */}
       <section className="py-16 md:py-24 px-4 md:px-6 bg-[#F9F7F4]">
