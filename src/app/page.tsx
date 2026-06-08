@@ -50,41 +50,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Peel. Stick. Transform. banner strip ── */}
-      <div
-        className="w-full py-5 md:py-7 flex items-center justify-center overflow-hidden"
-        style={{
-          background: `
-            repeating-linear-gradient(
-              90deg,
-              rgba(180,150,110,0.07) 0px,
-              rgba(180,150,110,0.07) 1px,
-              transparent 1px,
-              transparent 38px
-            ),
-            repeating-linear-gradient(
-              88deg,
-              rgba(160,130,90,0.05) 0px,
-              rgba(160,130,90,0.05) 1px,
-              transparent 1px,
-              transparent 60px
-            ),
-            linear-gradient(
-              180deg,
-              #faf8f5 0%,
-              #f5f0e8 40%,
-              #f8f4ee 70%,
-              #faf8f5 100%
-            )
-          `,
-          borderTop: "1px solid rgba(180,150,110,0.18)",
-          borderBottom: "1px solid rgba(180,150,110,0.18)",
-        }}
+      {/* ── Peel. Stick. Transform. banner ── */}
+      <div className="relative w-full flex items-center justify-center overflow-hidden"
+        style={{ minHeight: "clamp(220px, 35vw, 480px)" }}
       >
-        <h2
-          className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 tracking-tight text-center px-4"
-          style={{ letterSpacing: "0.01em" }}
-        >
+        {/* Background image */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/section-banner.svg"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        {/* Text */}
+        <h2 className="relative z-10 font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 tracking-tight text-center px-6 leading-tight">
           Peel. Stick. Transform.
         </h2>
       </div>
