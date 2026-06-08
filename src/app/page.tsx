@@ -75,6 +75,82 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Easy to Apply */}
+      <section className="py-16 md:py-24 px-5 md:px-10 bg-white overflow-hidden">
+        <div className="max-w-5xl mx-auto">
+          {/* Heading */}
+          <div className="mb-10 md:mb-16 text-center">
+            <span className="inline-block text-[#6C3FC5] font-[family-name:var(--font-inter)] text-xs md:text-sm uppercase tracking-[0.2em] mb-3 font-medium">
+              No tools required
+            </span>
+            <h2
+              className="font-[family-name:var(--font-playfair)] font-bold text-gray-900 text-4xl sm:text-5xl md:text-6xl leading-tight"
+              style={{ letterSpacing: "-0.02em" }}
+            >
+              Easy to apply.
+            </h2>
+          </div>
+
+          {/* Two-column image grid */}
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-10">
+            {/* Peel */}
+            <div className="flex flex-col items-center gap-4 md:gap-6">
+              <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-md">
+                <Image
+                  src="/images/peel.jpg"
+                  alt="Peel the backing off the vinyl panel"
+                  width={600}
+                  height={800}
+                  className="w-full h-full object-cover object-center"
+                  sizes="(max-width: 640px) 46vw, (max-width: 768px) 44vw, 400px"
+                />
+              </div>
+              <div className="text-center">
+                <p
+                  className="font-[family-name:var(--font-playfair)] font-semibold text-gray-900 text-xl sm:text-2xl md:text-3xl"
+                  style={{ letterSpacing: "-0.02em" }}
+                >
+                  Peel.
+                </p>
+                <p className="font-[family-name:var(--font-inter)] text-gray-500 text-xs sm:text-sm mt-1">
+                  Remove the backing
+                </p>
+              </div>
+            </div>
+
+            {/* Stick */}
+            <div className="flex flex-col items-center gap-4 md:gap-6">
+              <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-md">
+                <Image
+                  src="/images/stick.jpg"
+                  alt="Stick the vinyl panel to the wall"
+                  width={600}
+                  height={800}
+                  className="w-full h-full object-cover object-center"
+                  sizes="(max-width: 640px) 46vw, (max-width: 768px) 44vw, 400px"
+                />
+              </div>
+              <div className="text-center">
+                <p
+                  className="font-[family-name:var(--font-playfair)] font-semibold text-gray-900 text-xl sm:text-2xl md:text-3xl"
+                  style={{ letterSpacing: "-0.02em" }}
+                >
+                  Stick.
+                </p>
+                <p className="font-[family-name:var(--font-inter)] text-gray-500 text-xs sm:text-sm mt-1">
+                  Press firmly to your wall
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom note */}
+          <p className="text-center font-[family-name:var(--font-inter)] text-gray-400 text-sm mt-10 md:mt-14">
+            No glue. No nails. No mess — just transform.
+          </p>
+        </div>
+      </section>
+
       {/* Featured Work */}
       <section className="py-16 md:py-24 px-4 md:px-6 bg-[#F9F7F4]">
         <div className="max-w-6xl mx-auto">
