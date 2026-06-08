@@ -63,11 +63,17 @@ export default function Home() {
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
         {/* Text — left aligned, stacked */}
-        <div className="relative z-10 w-full px-8 md:px-16 lg:px-24">
-          <h2 className="font-[family-name:var(--font-playfair)] font-bold text-gray-900 tracking-tight leading-none text-left"
-            style={{ fontSize: "clamp(3.5rem, 10vw, 9rem)" }}>
-            <span className="block">Peel.</span>
-            <span className="block">Stick.</span>
+        <div className="relative z-10 w-full flex items-center" style={{ padding: "clamp(2.5rem, 6vw, 6rem) clamp(2rem, 8vw, 10rem)" }}>
+          <h2
+            className="font-[family-name:var(--font-playfair)] font-bold text-gray-900 text-left"
+            style={{
+              fontSize: "clamp(4.5rem, 13vw, 12rem)",
+              lineHeight: "1.05",
+              letterSpacing: "-0.02em",
+            }}
+          >
+            <span className="block mb-2 md:mb-4">Peel.</span>
+            <span className="block mb-2 md:mb-4">Stick.</span>
             <span className="block">Transform.</span>
           </h2>
         </div>
