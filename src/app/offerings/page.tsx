@@ -115,17 +115,17 @@ export default function OfferingsPage() {
               { src: "/images/marble-3.jpg", label: "Marble III" },
             ].map(({ src, label }, i) => (
               <AnimatedSection key={label} delay={i * 100}>
-                <div className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 bg-gray-50 aspect-[4/5]">
+                <div className="group rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 bg-gray-50 overflow-hidden">
                   <Image
                     src={src}
                     alt={label}
-                    fill
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    width={1254}
+                    height={1254}
+                    className="w-full h-auto block group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 640px) 92vw, 30vw"
                   />
-                  {/* Bottom label on hover */}
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-5 py-4 translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                    <p className="font-[family-name:var(--font-playfair)] text-white text-lg font-semibold">
+                  <div className="px-4 py-3 border-t border-gray-100">
+                    <p className="font-[family-name:var(--font-playfair)] text-gray-800 text-base font-semibold">
                       {label}
                     </p>
                   </div>
