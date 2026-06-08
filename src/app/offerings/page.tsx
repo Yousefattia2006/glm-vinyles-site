@@ -1,6 +1,7 @@
 import FlowArt, { FlowSection } from "@/components/ui/story-scroll";
 import AnimatedSection from "@/components/AnimatedSection";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function OfferingsPage() {
   return (
@@ -77,9 +78,68 @@ export default function OfferingsPage() {
 
       </FlowArt>
 
+      {/* ── Various Designs — Marble Gallery ── */}
+      <section className="bg-white py-16 md:py-24 px-5 md:px-10">
+        <div className="max-w-6xl mx-auto">
+
+          {/* Section heading */}
+          <AnimatedSection>
+            <div className="mb-10 md:mb-14">
+              <span className="inline-block text-[#6C3FC5] font-[family-name:var(--font-inter)] text-xs md:text-sm uppercase tracking-[0.22em] font-medium mb-3">
+                Explore the collection
+              </span>
+              <h2 className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-3" style={{ letterSpacing: "-0.02em" }}>
+                Various Designs
+              </h2>
+              <p className="font-[family-name:var(--font-inter)] text-gray-500 text-base md:text-lg max-w-xl">
+                A closer look at our marble surface finishes — each one unique, each one premium.
+              </p>
+            </div>
+          </AnimatedSection>
+
+          {/* Sub-heading: Marble Design */}
+          <AnimatedSection>
+            <div className="flex items-center gap-4 mb-6 md:mb-8">
+              <div className="w-1 h-8 rounded-full bg-[#6C3FC5]" />
+              <h3 className="font-[family-name:var(--font-playfair)] text-2xl sm:text-3xl font-semibold text-gray-900">
+                Marble Design
+              </h3>
+            </div>
+          </AnimatedSection>
+
+          {/* 3-column image grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
+            {[
+              { src: "/images/marble-1.jpg", label: "Marble I" },
+              { src: "/images/marble-2.jpg", label: "Marble II" },
+              { src: "/images/marble-3.jpg", label: "Marble III" },
+            ].map(({ src, label }, i) => (
+              <AnimatedSection key={label} delay={i * 100}>
+                <div className="group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 bg-gray-50 aspect-[4/5]">
+                  <Image
+                    src={src}
+                    alt={label}
+                    fill
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 92vw, 30vw"
+                  />
+                  {/* Bottom label on hover */}
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-5 py-4 translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <p className="font-[family-name:var(--font-playfair)] text-white text-lg font-semibold">
+                      {label}
+                    </p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
       {/* ── CTA ── */}
       <AnimatedSection>
-        <section className="bg-white py-14 md:py-20 px-5 text-center">
+        <section className="bg-white py-14 md:py-20 px-5 text-center border-t border-gray-100">
           <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Like what you see? Let&apos;s talk.
           </h2>
