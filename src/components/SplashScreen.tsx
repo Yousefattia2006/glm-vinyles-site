@@ -7,20 +7,29 @@ export default function SplashScreen() {
   const [hiding, setHiding] = useState(false);
 
   useEffect(() => {
-    // Lock scroll while splash is showing
+    // Lock scroll on both html and body (covers mobile Safari + all browsers)
+    const html = document.documentElement;
+    html.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
 
-    const fadeTimer  = setTimeout(() => setHiding(true), 1800);
+    // Also block touch scroll via a non-passive touchmove listener
+    const blockTouch = (e: TouchEvent) => e.preventDefault();
+    document.addEventListener("touchmove", blockTouch, { passive: false });
+
+    const fadeTimer   = setTimeout(() => setHiding(true), 1800);
     const removeTimer = setTimeout(() => {
       setVisible(false);
-      // Unlock scroll once splash is gone
+      html.style.overflow = "";
       document.body.style.overflow = "";
+      document.removeEventListener("touchmove", blockTouch);
     }, 2400);
 
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(removeTimer);
+      html.style.overflow = "";
       document.body.style.overflow = "";
+      document.removeEventListener("touchmove", blockTouch);
     };
   }, []);
 
@@ -31,6 +40,7 @@ export default function SplashScreen() {
       className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white transition-opacity duration-500 ${
         hiding ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
+      style={{ touchAction: "none" }}
     >
       {/* Logo */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
