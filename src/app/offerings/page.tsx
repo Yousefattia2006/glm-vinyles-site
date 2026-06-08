@@ -107,29 +107,19 @@ export default function OfferingsPage() {
             </div>
           </AnimatedSection>
 
-          {/* 3-column image grid */}
+          {/* 3-column image grid — no interactivity, fully uncropped */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
-            {[
-              { src: "/images/marble-1.jpg", label: "Marble I" },
-              { src: "/images/marble-2.jpg", label: "Marble II" },
-              { src: "/images/marble-3.jpg", label: "Marble III" },
-            ].map(({ src, label }, i) => (
-              <AnimatedSection key={label} delay={i * 100}>
-                <div className="group rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 bg-gray-50 overflow-hidden">
-                  <Image
-                    src={src}
-                    alt={label}
-                    width={1254}
-                    height={1254}
-                    className="w-full h-auto block group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 640px) 92vw, 30vw"
-                  />
-                  <div className="px-4 py-3 border-t border-gray-100">
-                    <p className="font-[family-name:var(--font-playfair)] text-gray-800 text-base font-semibold">
-                      {label}
-                    </p>
-                  </div>
-                </div>
+            {["/images/marble-1.jpg", "/images/marble-2.jpg", "/images/marble-3.jpg"].map((src, i) => (
+              <AnimatedSection key={src} delay={i * 100}>
+                <Image
+                  src={src}
+                  alt=""
+                  width={1254}
+                  height={1254}
+                  className="w-full h-auto block rounded-xl"
+                  sizes="(max-width: 640px) 92vw, 30vw"
+                  draggable={false}
+                />
               </AnimatedSection>
             ))}
           </div>
